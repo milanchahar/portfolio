@@ -1,0 +1,775 @@
+/* Import Google Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 70px; /* Adjust based on your navbar height */
+    color: #444; /* Default text color */
+}
+
+/* --- Variables (Optional but recommended) --- */
+:root {
+    --primary-color: #ff6f00; /* Orange color from reference - Adjust as needed */
+    --secondary-color: #343a40; /* Dark grey */
+    --light-grey: #f8f9fa;
+    --text-color: #444;
+    --heading-font-weight: 600;
+}
+
+/* --- General Styles --- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--heading-font-weight);
+    color: var(--secondary-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+a:hover {
+    color: darken(var(--primary-color), 10%);
+    text-decoration: none;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.custom-hr {
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    opacity: 1;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/* --- Custom Button Style --- */
+.custom-btn {
+    background-color: var(--primary-color) !important; /* Override bootstrap */
+    border-color: var(--primary-color) !important; /* Override bootstrap */
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.custom-btn:hover {
+    background-color: darken(var(--primary-color), 10%) !important;
+    border-color: darken(var(--primary-color), 10%) !important;
+    transform: translateY(-2px);
+}
+:root {
+    --primary-color: #007bff;   /* Blue (you can change it) */
+    --secondary-color: #333333; /* Dark grey */
+}
+
+/* --- Navbar --- */
+
+.navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 0.8rem 1rem;
+    background-color: #ffffff !important;
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: darken(var(--primary-color), 10%);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--secondary-color) !important;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-color) !important;
+}
+.navbar-nav {
+    display: flex;
+    gap: 1.5rem; /* Adds spacing between each nav item */
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--secondary-color) !important;
+    padding: 0.5rem 0rem; /* Remove side padding, spacing is now controlled by gap */
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: var(--light-grey); /* Light background */
+    min-height: calc(100vh - 70px); /* Full height minus navbar */
+}
+.hero-section h1 {
+    color: var(--secondary-color);
+}
+.hero-section .lead {
+    color: #666;
+}.profile-img {
+    max-width: 450px; /* Adjust size as needed */
+    border: 5px solid white; /* Optional border */
+    border-radius: 15px; /* Rounded rectangle */
+}
+
+/* --- About Section --- */
+#about ul li strong {
+    margin-right: 10px;
+}
+#about .about-img {
+    max-width: 300px; /* Adjust as needed */
+}
+#about a.btn {
+    margin-right: 10px;
+}
+#about a.btn i {
+    margin-right: 5px;
+}
+
+
+/* --- Services Section --- */
+#services .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#services .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* --- Portfolio Section --- */
+.portfolio-card {
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.portfolio-card img {
+    transition: transform 0.4s ease;
+}
+.portfolio-card:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Blog Section --- */
+#blog .card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* --- Contact Section --- */
+#contact .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+}
+#contact .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25); /* Use RGB version if needed */
+}
+#contact .icon-circle-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevent shrinking if text is long */
+}
+#contact a {
+    color: var(--primary-color);
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer --- */
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments (Example) --- */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 60px; /* Adjust if navbar height changes */
+    }
+    .hero-section {
+        text-align: center;
+        min-height: auto; /* Remove fixed height on smaller screens */
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .profile-img {
+        max-width: 250px; /* Smaller image on mobile */
+        margin: 0 auto; /* Center it */
+    }
+     #about .about-img {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+     .text-lg-start {
+        text-align: center !important; /* Override Bootstrap alignment */
+    }
+}
+
+@media (max-width: 767.98px) {
+    section {
+        padding: 60px 0;
+    }
+    h1.display-4 {
+        font-size: 2.5rem; /* Smaller headings on mobile */
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+/* Global */
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Hero Section with Gradient & Animation */
+.hero-section {
+    background: linear-gradient(120deg, #667eea, #764ba2);
+    color: white;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 10%, transparent 10.01%);
+    background-size: 40px 40px;
+    animation: float-bg 15s linear infinite;
+    z-index: 0;
+}
+
+@keyframes float-bg {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(20px, 20px); }
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* About Section with Light Texture */
+#about {
+    background: url('https://www.transparenttextures.com/patterns/cubes.png');
+    background-color: #f9f9f9;
+}
+
+/* Services Section */
+#services {
+    background: linear-gradient(45deg, #e0f7fa, #e1bee7);
+}
+
+/* Portfolio Section with Gradient Cards */
+#portfolio {
+    background: linear-gradient(to bottom right, #f8f9fa, #e3f2fd);
+}
+
+.portfolio-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Contact Section with Subtle Gradient */
+#contact {
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+}
+
+/* Buttons */
+.custom-btn {
+    border-radius: 30px;
+    padding: 10px 25px;
+}
+
+/* Section Headers */
+.custom-hr {
+    width: 80px;
+    height: 4px;
+    background: #007bff;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* Icon Circles */
+.icon-circle,
+.icon-circle-small {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-circle-small {
+    width: 40px;
+    height: 40px;
+}
+
+/* About Image Styling */
+.about-img {
+    border-radius: 20px;
+    border: 4px solid #e0e0e0;
+}
+
+/* Profile Image Styling */
+.profile-img {
+    border-radius: 20px;
+    border: 5px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Footer (optional) */
+footer {
+    background: #212529;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- Variables (Recommended placement at top) --- */
+:root {
+    --primary-color: #ff6f00; /* Orange */
+    --secondary-color: #343a40; /* Dark grey */
+    --light-grey: #f8f9fa;
+    --text-color: #444;
+    --heading-font-weight: 600;
+    /* Define primary color RGB components if needed for box-shadow rgba */
+    /* --primary-color-rgb: 255, 111, 0; */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 70px; /* Adjust based on your navbar height */
+    color: var(--text-color); /* Default text color (#444) */
+
+    /* --- NEW BACKGROUND: Subtle Linear Gradient --- */
+    /* Fades from white at the top to your light-grey */
+    background: linear-gradient(to bottom, #ffffff, var(--light-grey));
+    background-attachment: fixed; /* Keeps gradient fixed during scroll */
+    /* --- END NEW BACKGROUND --- */
+
+    min-height: 100vh; /* Ensure gradient covers viewport */
+}
+
+
+/* --- General Styles --- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--heading-font-weight);
+    color: var(--secondary-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+/* Note: darken() is a SASS/LESS function, not standard CSS. Use a slightly darker hex code directly or calculate manually */
+a:hover {
+    /* color: darken(var(--primary-color), 10%); */ /* Replace this */
+    color: #e66000; /* Slightly darker orange */
+    text-decoration: none;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.custom-hr {
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    opacity: 1;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/* --- Custom Button Style --- */
+.custom-btn {
+    background-color: var(--primary-color) !important; /* Override bootstrap */
+    border-color: var(--primary-color) !important; /* Override bootstrap */
+    color: #ffffff !important; /* Added white text for button */
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.custom-btn:hover {
+    /* background-color: darken(var(--primary-color), 10%) !important; */ /* Replace darken() */
+    /* border-color: darken(var(--primary-color), 10%) !important; */ /* Replace darken() */
+    background-color: #e66000 !important; /* Slightly darker orange */
+    border-color: #e66000 !important; /* Slightly darker orange */
+    transform: translateY(-2px);
+}
+/* Removed the duplicate :root block that was here */
+
+/* --- Navbar --- */
+.navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 0.8rem 1rem;
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Added subtle shadow */
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    font-weight: bold; /* Added for emphasis */
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    /* color: darken(var(--primary-color), 10%); */ /* Replace darken() */
+    color: #e66000 !important; /* Slightly darker orange */
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 1.5rem; /* Adds spacing between each nav item */
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--secondary-color) !important;
+    padding: 0.5rem 0rem; /* Remove side padding, spacing is now controlled by gap */
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Start underline from center */
+    transform: translateX(-50%); /* Center the starting point */
+    bottom: 4px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    /* Removed background-color here as the body gradient provides a background */
+    /* If you want the hero distinct, uncomment below and maybe use a slightly different shade */
+    /* background-color: var(--light-grey); */
+    min-height: calc(100vh - 70px); /* Full height minus navbar */
+    display: flex; /* Optional: helps vertical centering if needed */
+    align-items: center; /* Optional: helps vertical centering if needed */
+}
+.hero-section h1 {
+    color: var(--secondary-color);
+}
+.hero-section .lead {
+    color: #666;
+}
+.profile-img {
+    max-width: 450px; /* Adjust size as needed */
+    border: 5px solid white; /* Optional border */
+    border-radius: 15px; /* Rounded rectangle */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Added subtle shadow */
+}
+
+/* --- About Section --- */
+#about ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0; /* Remove default padding */
+}
+#about ul li {
+    margin-bottom: 10px; /* Spacing between list items */
+}
+#about ul li strong {
+    margin-right: 10px;
+    color: var(--secondary-color); /* Make labels stand out */
+}
+#about .about-img {
+    max-width: 100%; /* Make responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 350px; /* Control max height */
+    border-radius: 10px; /* Softer edges */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+#about a.btn {
+    margin-right: 10px;
+    margin-top: 15px; /* Space above buttons */
+}
+#about a.btn i {
+    margin-right: 8px; /* Icon spacing */
+}
+
+
+/* --- Services Section --- */
+#services .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Softer corners */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Base shadow */
+}
+#services .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Enhanced shadow on hover */
+}
+#services .card-body {
+    padding: 30px; /* More padding inside card */
+}
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto; /* Center the icon */
+    background-color: var(--primary-color); /* Use primary color */
+    color: white; /* Icon color */
+    font-size: 1.8rem; /* Icon size */
+    box-shadow: 0 4px 10px rgba(var(--primary-color-rgb, 255, 111, 0), 0.3); /* Shadow using primary color */
+}
+
+/* --- Portfolio Section --- */
+.portfolio-card {
+    overflow: hidden;
+    border: none;
+    border-radius: 10px; /* Match other cards */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Slightly different base shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.portfolio-card img {
+    transition: transform 0.4s ease;
+}
+.portfolio-card:hover img {
+    transform: scale(1.05);
+}
+.portfolio-card .card-body {
+    padding: 20px; /* Adjust padding */
+}
+
+/* --- Blog Section --- */
+#blog .card {
+    /* Reuse service card styles or define unique ones */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+#blog .card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+#blog .card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* --- Contact Section --- */
+#contact {
+    background-color: var(--secondary-color); /* Dark background for contrast */
+    color: #000000; /* Light text on dark background */
+}
+#contact h2, #contact p {
+    color: #000000; /* White text for headings and paragraphs */
+}
+#contact .custom-hr {
+    background-color: var(--primary-color); /* Keep hr primary */
+}
+#contact .form-control {
+    border-radius: 5px;
+    border: 1px solid #ffffff; /* Darker border */
+    background-color: #ffffff; /* Dark input background */
+    color: #000000; /* Light input text */
+    padding: 12px; /* Slightly larger padding */
+}
+#contact .form-control::placeholder {
+    color: #ffffff; /* Lighter placeholder text */
+}
+#contact .form-control:focus {
+    border-color: var(--primary-color);
+    background-color: #5a6268; /* Slightly lighter on focus */
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb, 255, 111, 0), 0.25);
+    color: #000000;
+}
+#contact .icon-circle-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
+    color: var(--primary-color); /* Primary color icon */
+    margin-right: 15px; /* Space next to icon */
+}
+#contact a {
+    color: #000000; /* White links */
+    font-weight: 500;
+}
+#contact a:hover {
+    color: var(--primary-color); /* Hover color */
+    text-decoration: none; /* Remove underline */
+}
+#contact .contact-info p {
+    margin-bottom: 15px; /* Spacing between contact items */
+    color: #000000; /* Slightly dimmer text for info */
+}
+#contact .contact-info strong {
+    color: #000000; /* Make labels white */
+    margin-right: 8px;
+}
+#contact .custom-btn { /* Ensure button stands out */
+    margin-top: 15px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #343a40; /* Match secondary color */
+    color: #adb5bd; /* Light grey text */
+    padding: 20px 0;
+    text-align: center;
+}
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+footer a { /* Optional: Style links in footer */
+    color: var(--primary-color);
+}
+footer a:hover {
+    color: #ffffff;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 60px; /* Adjust if navbar height changes */
+    }
+    .hero-section {
+        text-align: center;
+        min-height: auto; /* Remove fixed height */
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .profile-img {
+        max-width: 250px;
+        margin: 20px auto; /* Center it with space */
+    }
+     #about .about-img {
+        max-width: 250px; /* Slightly larger */
+        margin: 20px auto;
+    }
+     .text-lg-start {
+        text-align: center !important;
+    }
+    .navbar-nav {
+        gap: 0.5rem; /* Reduce gap on smaller screens */
+    }
+    #contact .text-lg-start { /* Ensure contact info is centered too */
+        text-align: center !important;
+    }
+    #contact .d-flex { /* Stack contact info items vertically */
+        flex-direction: column;
+        align-items: center !important;
+    }
+    #contact .icon-circle-small {
+        margin-right: 0; /* Remove margin when stacked */
+        margin-bottom: 10px; /* Add bottom margin */
+    }
+}
+
+@media (max-width: 767.98px) {
+    section {
+        padding: 60px 0;
+    }
+    h1, .display-4 { /* Target h1 and specifically display-4 */
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    .navbar-nav {
+        margin-top: 1rem; /* Add space when navbar collapses */
+        width: 100%;
+        justify-content: center;
+    }
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem; /* Add back padding for touch targets */
+    }
+    .navbar-nav .nav-link::after { /* Adjust underline for padding */
+       bottom: 0.5rem;
+    }
+    .portfolio-card .card-body, #services .card-body {
+        padding: 20px; /* Reduce padding in cards */
+    }
+}
